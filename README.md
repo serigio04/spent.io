@@ -1,0 +1,1 @@
+# Proyecto spent.io para el control de gastos
