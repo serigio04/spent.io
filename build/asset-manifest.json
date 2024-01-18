@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/static/js/main.150ffdb4.js",
+    "static/media/dinero.svg": "/static/media/dinero.fd1502972a42e92fd69792dd13d3969a.svg",
+    "static/media/alimentacion.svg": "/static/media/alimentacion.c8e70a258eb596777e30c13983779417.svg",
+    "static/media/themeOn.svg": "/static/media/themeOn.e0f6e4537091311616ac998e52078aa0.svg",
+    "static/media/salud.svg": "/static/media/salud.6f38a1e4ea2fbf3ceb40fd4b68528a5e.svg",
+    "static/media/transporte.svg": "/static/media/transporte.f7ce14f958f4aa4b0905473e73cfc90a.svg",
+    "static/media/utilidades.svg": "/static/media/utilidades.359d3a0fd9f17bd7f3856ac9c62a4d1c.svg",
+    "static/media/logo.svg": "/static/media/logo.31122d1f8553eccfeca84074b17c7e02.svg",
+    "static/media/privado.svg": "/static/media/privado.6ca8038a3072f8ee10faa53cb936d4d5.svg",
+    "static/media/otros.svg": "/static/media/otros.eb3b2b82475a707b45f8548589fcd7c5.svg",
+    "static/media/themeOff.svg": "/static/media/themeOff.95a646ca6b312e16d199e2bf0d27e638.svg",
+    "static/media/ojo.svg": "/static/media/ojo.a2950b777aa0a8c24fb71bd22200b966.svg",
+    "index.html": "/index.html",
+    "main.150ffdb4.js.map": "/static/js/main.150ffdb4.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.150ffdb4.js"
+  ]
+}
