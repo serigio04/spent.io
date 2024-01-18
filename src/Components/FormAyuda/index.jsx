@@ -1,0 +1,1 @@
+//Al presionar el botón de ayuda el sistema retorna un formulario donde se le solicita al usuario llenar campos como: nombre, correo electronico, problema y comentario

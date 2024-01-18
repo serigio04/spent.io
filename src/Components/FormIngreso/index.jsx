@@ -1,0 +1,3 @@
+//Al presionar el botón de registrar nuevo el sistema retorna un formulario que como primer punto solicita el tipo de ingreso :  abono / cargo 
+// si es abono: el sistema solicita la cantidad que se ingreso a la cuenta y actualiza la cantidad que aparece en pantalla
+// si es cargo: el sistema solicita el tipo de gasto, algun detalle adicional y la cantidad, luego actualiza el listado de gastos registrados
