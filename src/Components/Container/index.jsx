@@ -22,7 +22,7 @@ const StyledContent = styled.section`
 const Container = () => {
   return (
     <StyledContainer>
-      <Title>Banco Inteligente</Title>
+      <Title>Organiza tus gastos</Title>
       <StyledContent>
         <Account />
         <Lista />
