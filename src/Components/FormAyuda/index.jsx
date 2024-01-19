@@ -1,6 +1,8 @@
 //Al presionar el botón de ayuda el sistema retorna un formulario donde se le solicita al usuario llenar campos como: nombre, correo electronico, problema y comentario
+import React from 'react'
 import { useState } from "react";
 import CampoTexto from "../CampoTexto/CampoTextp";
+import { Btn } from "../../UI";
 
 const FormularioAyuda = (props) => {
 
@@ -43,9 +45,9 @@ const FormularioAyuda = (props) => {
                 valor={problema} 
                 setValor={setProblema}
             />
-            <Boton>
+            <Btn>
                 Enviar comentario
-            </Boton>
+            </Btn>
         </form>
     </section>
 }
