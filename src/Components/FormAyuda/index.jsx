@@ -1,1 +1,52 @@
 //Al presionar el botón de ayuda el sistema retorna un formulario donde se le solicita al usuario llenar campos como: nombre, correo electronico, problema y comentario
+import { useState } from "react";
+import CampoTexto from "../CampoTexto/CampoTextp";
+
+const FormularioAyuda = (props) => {
+
+    const [nombre, setNombre] = useState("");
+    const [email, setEmail] = useState("");
+    const [problema, setProblema] = useState("");
+
+    const {registrarGasto} = props
+
+    const manejarEnvio = (e) => {
+        e.preventDefault();
+        let datosAEnviar = {
+            nombre,
+            email,
+            precio
+        }
+        registrarGasto(datosAEnviar)
+    }
+
+    return <section className="formulario">
+        <form onSubmit={manejarEnvio}>
+            <h2>Rellena el formulario para ingresar un gasto</h2>
+            <CampoTexto 
+                title="Nombre" 
+                placeholder="Ingresar nombre" 
+                required 
+                valor={nombre} 
+                setValor={setNombre}
+            />
+            <CampoTexto 
+                title="Email" 
+                placeholder="Ingresar email"
+                required
+                valor={email} 
+                setValor={setEmail}
+            />
+            <CampoTexto 
+                title="Problema" 
+                placeholder="Ingresar Problema"
+                valor={problema} 
+                setValor={setProblema}
+            />
+            <Boton>
+                Enviar comentario
+            </Boton>
+        </form>
+    </section>
+}
+export default FormularioAyuda
