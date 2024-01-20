@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import { Btn } from '../../UI';
 import CampoTexto from '../CampoTexto/CampoTextp';
+import { v4 as uid } from 'uuid';
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-const FormularioGasto = (props) => {
+const FormularioGasto = ({ registrarGasto}) => {
     const [tipo, setTipo] = useState("");
     const [detalle, setDetalle] = useState("");
     const [precio, setPrecio] = useState("");
 
-    const { registrarGasto } = props;
-
     const manejarEnvio = (e) => {
         e.preventDefault();
-        let datosAEnviar = {
+        let nuevoGasto = {
+            uid,
             tipo,
             detalle,
             precio
         };
 
-        registrarGasto(datosAEnviar);
+        registrarGasto(nuevoGasto);
     };
 
     return (
@@ -25,25 +26,30 @@ const FormularioGasto = (props) => {
             <form onSubmit={manejarEnvio}>
                 <h2>Registrar gasto</h2>
                     <CampoTexto
-                        title="Tipo"
+                        title="type"
                         placeholder="Ingresar tipo"
                         required
                         valor={tipo}
                         setValor={setTipo}
+                        margin="dense"
                     />
                     <CampoTexto
-                        title="Detalle"
+                        title="from"
                         placeholder="Ingresar detalle"
                         required
                         valor={detalle}
                         setValor={setDetalle}
+                        margin="dense"
                     />
                     <CampoTexto
-                        title="Precio"
+                        title="value"
                         placeholder="Ingresar precio"
                         valor={precio}
                         setValor={setPrecio}
+                        margin="dense"
                     />
+                    {/* <DatePicker/> */}
+
                 <Btn type="submit">
                     Ingresar
                 </Btn>

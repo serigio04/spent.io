@@ -1,18 +1,27 @@
-import React from 'react'
-import { Box, Anchor } from "../../UI";
-import { lista } from "../../info";
-import Card from "../Card";
-import Form from "../FormIngreso";
+import React, { useState } from 'react';
+import { Box, Btn } from '../../UI'; 
+import { lista } from '../../info';
+import Card from '../Card';
+import Form from '../FormIngreso/index'
 
-const Lista =  () =>{
-    return <Box>
-        {
-            lista.cargos.map( (cargo, i) => {
-                return <Card key={i} cargo={cargo} />              
-            })
-        }
-        <Anchor href="../FormIngreso/index.jsx">Registrar nuevo</Anchor>
+const Lista = () => {
+    const [mostrarForm, setMostrarForm] = useState(false);
+
+    const handlerMostrarForm = () => {
+        setMostrarForm(true);
+    };
+
+    return (
+    <Box>
+      {lista.cargos.map((cargo, i) => (
+        <Card key={i} cargo={cargo} />
+      ))}
+      {/* <Link to="/FormIngreso">Registrar nuevo</Link> */}
+      {mostrarForm ? (<Form />) : (
+        <Btn onClick={handlerMostrarForm}>Registrar nuevo</Btn>
+      )}
     </Box>
-}
+  );
+};
 
-export default Lista
+export default Lista;

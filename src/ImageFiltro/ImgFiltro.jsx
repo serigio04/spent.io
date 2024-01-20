@@ -8,7 +8,7 @@ import { Icon, IconTheme } from "../UI";
 
 export default (type) => {
     const Images = {
-        Restaurante: <IconTheme src={alimentacion} alt="restaurant" />,
+        Comida: <IconTheme src={alimentacion} alt="Comida" />,
         Salud: <IconTheme src={salud} alt="Salud" />,
         Transporte: <IconTheme src={transporte} alt="Transporte" />,
         Utilidades: <IconTheme src={utilidades} alt="Utilidades" />,
