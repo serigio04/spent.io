@@ -7,7 +7,6 @@ import utilidades from "../assets/images/utilidades.svg";
 import { Icon, IconTheme } from "../UI";
 
 export default (type) => {
-    console.log(type)
     const Images = {
         Restaurante: <IconTheme src={alimentacion} alt="restaurant" />,
         Salud: <IconTheme src={salud} alt="Salud" />,

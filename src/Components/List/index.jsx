@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Btn } from "../../UI";
+import { Box, Anchor } from "../../UI";
 import { lista } from "../../info";
 import Card from "../Card";
 import Form from "../FormIngreso";
@@ -11,7 +11,7 @@ const Lista =  () =>{
                 return <Card key={i} cargo={cargo} />              
             })
         }
-        <Btn onClick={Form}>Registrar nuevo</Btn>
+        <Anchor href="../FormIngreso/index.jsx">Registrar nuevo</Anchor>
     </Box>
 }
 

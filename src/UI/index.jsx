@@ -20,6 +20,18 @@ export const Btn = styled.button`
     padding: 8px 20px;
     cursor: pointer;
 `
+export const Anchor = styled.a`
+    margin: 15px auto 0px auto;
+    display: block;
+    border-radius: 20px;
+    background-color: #41d3be;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 20px;
+    cursor: pointer;
+`
 
 export const Box = styled.div`
     display: flex;
