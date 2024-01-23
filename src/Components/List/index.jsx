@@ -8,17 +8,18 @@ const Lista = () => {
     const [mostrarForm, setMostrarForm] = useState(false);
 
     const handlerMostrarForm = () => {
-        setMostrarForm(true);
+        setMostrarForm(!mostrarForm);
     };
 
     return (
     <Box>
-      {lista.cargos.map((cargo, i) => (
-        <Card key={i} cargo={cargo} />
-      ))}
-      {/* <Link to="/FormIngreso">Registrar nuevo</Link> */}
       {mostrarForm ? (<Form />) : (
+        <>
+          {lista.cargos.map((cargo, i) => (
+            <Card key={i} cargo={cargo} />
+          ))}
         <Btn onClick={handlerMostrarForm}>Registrar nuevo</Btn>
+        </>
       )}
     </Box>
   );
