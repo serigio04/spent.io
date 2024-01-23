@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Btn } from '../../UI';
 import CampoTexto from '../CampoTexto/CampoTextp';
 import { v4 as uid } from 'uuid';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+// import ListaOpciones from '../ListaOp/listaOp';
 
 const FormularioGasto = ({ registrarGasto}) => {
     const [tipo, setTipo] = useState("");
@@ -25,6 +25,11 @@ const FormularioGasto = ({ registrarGasto}) => {
         <section className="formulario">
             <form onSubmit={manejarEnvio}>
                 <h2>Registrar gasto</h2>
+                    {/* <ListaOpciones 
+                        valor={tipo}
+                        setValor={setTipo}
+                        tipo={props.type}
+                    /> */}
                     <CampoTexto
                         title="type"
                         placeholder="Ingresar tipo"
@@ -51,7 +56,7 @@ const FormularioGasto = ({ registrarGasto}) => {
                     {/* <DatePicker/> */}
 
                 <Btn type="submit">
-                    Ingresar
+                    Ingresar gasto
                 </Btn>
             </form>
         </section>

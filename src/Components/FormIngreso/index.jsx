@@ -1,5 +1,4 @@
 import React from 'react'
-import { v4 as uid } from 'uuid';
 import { useState } from "react";
 import FormularioIngreso from "./Ingreso";
 import FormularioGasto from "./Gasto";
@@ -8,15 +7,15 @@ import { lista } from '../../info';
 
 const Form = () => {
     const [tipoFormulario, setTipoFormulario] = useState(null);
-    const [cargo, setGasto] = useState();
+    const [gasto, setGasto] = useState();
 
     const mostrarForm = (tipo) => {
         setTipoFormulario(tipo);
     }
 
-    const registrarGasto = (cargo) =>{
-        cargo.id = uid();
-        setGasto([...lista.cargos, cargo])
+    const registrarGasto = (nuevoGasto) =>{
+        console.log(nuevoGasto);
+        setGasto([...lista.cargos, nuevoGasto]);
       }
 
     return ( 
