@@ -5,18 +5,16 @@ import React from 'react'
 import { useState } from "react";
 import CampoTexto from "../CampoTexto/CampoTextp";
 import { Btn } from "../../UI";
+import Account from '../Account';
 
-const FormularioIngreso = ({registrarIngreso}) => {
+const FormularioIngreso = ({ actualizarCant }) => {
 
-    const [cantidad, setCantidad] = useState("");
-
+    const [cantidad, setCantidad] = useState(0);
+    
     const manejarEnvio = (e) => {
         e.preventDefault();
-        let nuevoIngreso = {
-            cantidad
-        }
-        registrarIngreso(nuevoIngreso);
-        console.log(registrarIngreso);
+        const nuevaCantidad = parseFloat(cantidad);
+        actualizarCant(nuevaCantidad);
     }
 
     return (
