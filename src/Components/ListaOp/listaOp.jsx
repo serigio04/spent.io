@@ -5,7 +5,7 @@ import "./listaOp.css"
 const ListaOpciones = (props) => { 
 
     const handleChange = (e) => {
-        props.setTipo(e.target.value)
+        props.setValor(e.target.value)
     };
     
     return (

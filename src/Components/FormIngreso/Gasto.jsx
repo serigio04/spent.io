@@ -20,6 +20,7 @@ const FormularioGasto = ({registrarGasto}) => {
         };
 
         registrarGasto(nuevoGasto);
+        console.log(registrarGasto)
     };
 
     return (
@@ -29,16 +30,7 @@ const FormularioGasto = ({registrarGasto}) => {
                     <ListaOpciones 
                         valor={tipo}
                         setValor={setTipo}
-                        tipo={lista.cargos.type}
                     />
-                    {/* <CampoTexto
-                        title="type"
-                        placeholder="Ingresar tipo"
-                        required
-                        valor={tipo}
-                        setValor={setTipo}
-                        margin="dense"
-                    /> */}
                     <CampoTexto
                         title="from"
                         placeholder="Ingresar detalle"
@@ -54,7 +46,6 @@ const FormularioGasto = ({registrarGasto}) => {
                         setValor={setPrecio}
                         margin="dense"
                     />
-                    {/* <DatePicker/> */}
 
                 <Btn type="submit">
                     Ingresar gasto

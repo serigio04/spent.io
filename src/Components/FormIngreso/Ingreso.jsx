@@ -6,18 +6,17 @@ import { useState } from "react";
 import CampoTexto from "../CampoTexto/CampoTextp";
 import { Btn } from "../../UI";
 
-const FormularioIngreso = (props) => {
+const FormularioIngreso = ({registrarIngreso}) => {
 
     const [cantidad, setCantidad] = useState("");
 
-    const {registrarIngreso} = props;
-
     const manejarEnvio = (e) => {
         e.preventDefault();
-        let datosAEnviar = {
+        let nuevoIngreso = {
             cantidad
         }
-        registrarIngreso(datosAEnviar)
+        registrarIngreso(nuevoIngreso);
+        console.log(registrarIngreso);
     }
 
     return (
