@@ -8,13 +8,17 @@ import { lista } from '../../info';
 const Form = () => {
     const [tipoFormulario, setTipoFormulario] = useState(null);
     const [gasto, setGasto] = useState();
+    const [ingreso, setIngreso] = useState()
 
     const mostrarForm = (tipo) => {
         setTipoFormulario(tipo);
     }
 
+    const registrarIngreso = (nuevoIngreso) => { 
+        console.log(`El ingreso es de`)
+    }
+
     const registrarGasto = (nuevoGasto) =>{
-        console.log(nuevoGasto);
         setGasto([...lista.cargos, nuevoGasto]);
       }
 
@@ -24,7 +28,7 @@ const Form = () => {
             <Btn onClick={() => mostrarForm("Ingreso")}>Ingreso</Btn>
             <Btn onClick={() => mostrarForm("Gasto")}>Gasto</Btn>
 
-            {tipoFormulario === "Ingreso" && <FormularioIngreso />}
+            {tipoFormulario === "Ingreso" && <FormularioIngreso registrarIngreso={registrarIngreso}/>}
             {tipoFormulario === "Gasto" && <FormularioGasto registrarGasto={registrarGasto}/>}
         </div>
     );

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Btn } from '../../UI';
 import CampoTexto from '../CampoTexto/CampoTextp';
 import { v4 as uid } from 'uuid';
-// import ListaOpciones from '../ListaOp/listaOp';
+import { lista } from "../../info";
+import ListaOpciones from '../ListaOp/listaOp';
 
-const FormularioGasto = ({ registrarGasto}) => {
+const FormularioGasto = ({registrarGasto}) => {
     const [tipo, setTipo] = useState("");
     const [detalle, setDetalle] = useState("");
     const [precio, setPrecio] = useState("");
@@ -19,24 +20,16 @@ const FormularioGasto = ({ registrarGasto}) => {
         };
 
         registrarGasto(nuevoGasto);
+        console.log(registrarGasto)
     };
 
     return (
         <section className="formulario">
             <form onSubmit={manejarEnvio}>
                 <h2>Registrar gasto</h2>
-                    {/* <ListaOpciones 
+                    <ListaOpciones 
                         valor={tipo}
                         setValor={setTipo}
-                        tipo={props.type}
-                    /> */}
-                    <CampoTexto
-                        title="type"
-                        placeholder="Ingresar tipo"
-                        required
-                        valor={tipo}
-                        setValor={setTipo}
-                        margin="dense"
                     />
                     <CampoTexto
                         title="from"
@@ -53,7 +46,6 @@ const FormularioGasto = ({ registrarGasto}) => {
                         setValor={setPrecio}
                         margin="dense"
                     />
-                    {/* <DatePicker/> */}
 
                 <Btn type="submit">
                     Ingresar gasto
