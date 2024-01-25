@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Select, InputLabel, MenuItem, FormControl} from "@mui/material"
 import { lista } from "../../info";
 
-const ListaOpciones = (props) => { 
+const ListaOpciones = (props) => {
+    const [value, setValue] = useState(props.tipo || "");
 
     const handleChange = (e) => {
+        setValue(e.target.value)
         props.setTipo(e.target.value)
       };
     
@@ -14,7 +17,8 @@ const ListaOpciones = (props) => {
                 id="select-team"
                 onChange={handleChange}
                 labelId="label-for-select"
-                label="Otros"            
+                label="Otros"   
+                value={value}         
             >
                 <MenuItem disabled value="">
                 <em>Select a type</em></MenuItem>
