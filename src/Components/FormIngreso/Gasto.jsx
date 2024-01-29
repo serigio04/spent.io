@@ -20,7 +20,7 @@ const FormularioGasto = ({registrarGasto}) => {
         };
 
         registrarGasto(nuevoGasto);
-        console.log(registrarGasto)
+        console.log(nuevoGasto);
     };
 
     return (

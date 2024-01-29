@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Select, InputLabel, MenuItem, FormControl} from "@mui/material"
+import { Select, InputLabel, MenuItem, FormControl } from "@mui/material";
 import { lista } from "../../info";
 import "./listaOp.css"
 
@@ -24,7 +24,7 @@ const ListaOpciones = (props) => {
             >
                 <MenuItem disabled value="">
                 <em>Select a type</em></MenuItem>
-                { lista.cargos.map((cargo, index) => <MenuItem key={index} value={cargo}>{cargo}</MenuItem>) }
+                { lista.cargos.map((cargo, index) => <MenuItem key={index} value={cargo.type}>{cargo.type}</MenuItem>) }
             </Select>
         </FormControl>
     </>
