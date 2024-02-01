@@ -4,13 +4,11 @@ import { useState } from "react";
 import CampoTexto from "../CampoTexto/CampoTextp";
 import { Btn } from "../../UI";
 
-const FormularioAyuda = (props) => {
+const FormularioAyuda = () => {
 
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [problema, setProblema] = useState("");
-
-    const {registrarGasto} = props
 
     const manejarEnvio = (e) => {
         e.preventDefault();
@@ -19,7 +17,7 @@ const FormularioAyuda = (props) => {
             email,
             precio
         }
-        registrarGasto(datosAEnviar)
+        console.log(datosAEnviar)
     }
 
     return <section className="formulario">
@@ -40,8 +38,8 @@ const FormularioAyuda = (props) => {
                 setValor={setEmail}
             />
             <CampoTexto 
-                title="Problema" 
-                placeholder="Ingresar Problema"
+                title="Comentario" 
+                placeholder="Ingresar comentario"
                 valor={problema} 
                 setValor={setProblema}
             />

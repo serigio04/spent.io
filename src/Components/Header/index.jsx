@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import FormularioAyuda from '../FormAyuda';
 import styled from "styled-components";
 import logo from "../../assets/images/logo.svg";
 import { colorPrimario } from "../../UI/variables";
@@ -24,20 +26,33 @@ const BtnHeader = styled.a`
   color: ${ (props) =>props.primary ? "white" : colorPrimario};
   background: ${ (props) => props.primary ? "transparent" : "white"};
 `
+const LinkStyled = styled(Link)`
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 20px;
+  margin: 0 10px;
+  font-weight: 600;
+  border: 2px solid white;
+  color: ${props => props.primary ? "white" : colorPrimario};
+  background: ${props => props.primary ? "transparent" : "white"};
+`
 
 const Header = () => {
   return (
-    <StyleHeader>
-      <StyleLogo src={logo} alt="Logo Smart Bank" />
-      <div>
-        <BtnHeader  href="https://google.com">
-          Ayuda
-        </BtnHeader>
-        <BtnHeader primary href="https://google.com">
-          Salir
-        </BtnHeader>
-      </div>
-    </StyleHeader>
+    <Router>
+      <StyleHeader>
+        <StyleLogo src={logo} alt="Logo Smart Bank" />
+        <div>
+          <LinkStyled  to="/ayuda">
+            Ayuda
+          </LinkStyled>
+          <BtnHeader primary href="https://google.com">
+            Salir
+          </BtnHeader>
+        </div>
+        <Route path="/ayuda" exact component={FormularioAyuda} />
+      </StyleHeader>
+    </Router>
   );
 };
 
