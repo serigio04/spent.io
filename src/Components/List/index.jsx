@@ -4,7 +4,7 @@ import { lista } from '../../info';
 import Card from '../Card';
 import Form from '../FormIngreso/index'
 
-const Lista = () => {
+const Lista = ({ actualizarCant }) => {
     const [mostrarForm, setMostrarForm] = useState(false);
 
     const handlerMostrarForm = () => {
@@ -13,7 +13,7 @@ const Lista = () => {
 
     return (
     <Box>
-      {mostrarForm ? (<Form />) : (
+      {mostrarForm ? (<Form actualizarCant={actualizarCant}/>) : (
         <>
           {lista.cargos.map((cargo, i) => (
             <Card key={i} cargo={cargo} />

@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import styled from "styled-components";
 import Title from "../Title";
 import Account from "../Account";
@@ -20,12 +20,19 @@ const StyledContent = styled.section`
 `
 
 const Container = () => {
+
+  const [cant, setCant] = useState(1000.33);
+
+  const actualizarCant = (nuevaCantidad) => {
+    setCant((cantidad) => cantidad + nuevaCantidad);
+  };
+
   return (
     <StyledContainer>
       <Title>Organiza tus gastos</Title>
       <StyledContent>
-        <Account />
-        <Lista />
+        <Account cant={cant}/>
+        <Lista actualizarCant={actualizarCant}/>
       </StyledContent>
     </StyledContainer>
   );

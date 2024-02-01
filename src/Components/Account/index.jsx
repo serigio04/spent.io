@@ -4,26 +4,17 @@ import styled from "styled-components";
 import ojo from "../../assets/images/ojo.svg";
 import dinero from "../../assets/images/dinero.svg";
 import { Icon, IconTheme, Btn, Box, Saldo, Detalle } from "../../UI"; 
-import FormularioIngreso from "../FormIngreso/Ingreso";
 
 const IconoMargin = styled(Icon)`
   margin-top: 2px;
 `
 
-const Account = (actualizarCant) => {
+const Account = ({ cant }) => {
   const [toggleState, untoggle] = useState(true);
-  const [cant, setCant] = useState(1000.33);
 
   const toggleHandler = () => {
     untoggle((toggleState) => !toggleState);
   };
-
-  const actualizarCantDesdeForm = (nuevaCant) => {
-    setCant(cant + nuevaCant);
-    if (actualizarCant){
-      actualizarCant(cant + nuevaCant)
-    }
-  }
 
   return (
     <Box>
@@ -34,12 +25,11 @@ const Account = (actualizarCant) => {
           <IconTheme src={dinero} alt="Icono de saldo" />
         </span>
         {toggleState ? (
-          <Saldo>
+          <Saldo cant={cant}>
             <Detalle>Q</Detalle> {cant}
           </Saldo>
         ) : null}
       </div>
-      {/* <FormularioIngreso actualizarCantDesdeForm={actualizarCantDesdeForm}/> */}
 
       <Btn onClick={toggleHandler}>
         <IconoMargin

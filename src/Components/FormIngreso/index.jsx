@@ -5,10 +5,9 @@ import FormularioGasto from "./Gasto";
 import { Btn } from "../../UI";
 import { lista } from '../../info';
 
-const Form = () => {
+const Form = ({actualizarCant}) => {
     const [tipoFormulario, setTipoFormulario] = useState(null);
     const [gasto, setGasto] = useState();
-    const [ingreso, setIngreso] = useState()
 
     const mostrarForm = (tipo) => {
         setTipoFormulario(tipo);
@@ -28,7 +27,7 @@ const Form = () => {
             <Btn onClick={() => mostrarForm("Ingreso")}>Ingreso</Btn>
             <Btn onClick={() => mostrarForm("Gasto")}>Gasto</Btn>
 
-            {tipoFormulario === "Ingreso" && <FormularioIngreso registrarIngreso={registrarIngreso}/>}
+            {tipoFormulario === "Ingreso" && <FormularioIngreso actualizarCant={actualizarCant}/>}
             {tipoFormulario === "Gasto" && <FormularioGasto registrarGasto={registrarGasto}/>}
         </div>
     );

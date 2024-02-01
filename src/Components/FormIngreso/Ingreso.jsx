@@ -5,17 +5,18 @@ import React from 'react'
 import { useState } from "react";
 import CampoTexto from "../CampoTexto/CampoTextp";
 import { Btn } from "../../UI";
-import Account from '../Account';
 
-const FormularioIngreso = ({ actualizarCant }) => {
+const FormularioIngreso = ({actualizarCant}) => {
 
     const [cantidad, setCantidad] = useState(0);
     
     const manejarEnvio = (e) => {
         e.preventDefault();
         const nuevaCantidad = parseFloat(cantidad);
-        actualizarCant(nuevaCantidad);
-    }
+        if (!isNaN(actualizarCant)){
+            actualizarCant(nuevaCantidad)
+        };
+    };
 
     return (
         <section className="formulario">
@@ -23,7 +24,7 @@ const FormularioIngreso = ({ actualizarCant }) => {
                 <h2>Ingrese una cantidad</h2>
                     <CampoTexto
                         title="Cantidad"
-                        placeholder="Ingresar cantidad"
+                        placeholder="xxxx.xx"
                         valor={cantidad}
                         setValor={setCantidad}
                     />
