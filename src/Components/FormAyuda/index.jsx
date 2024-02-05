@@ -20,9 +20,11 @@ const FormularioAyuda = () => {
         console.log(datosAEnviar)
     }
 
-    return <section className="formulario">
+    return (
+        <>
+        <section className="formulario">
         <form onSubmit={manejarEnvio}>
-            <h2>Rellena el formulario para ingresar un gasto</h2>
+            <h2>Rellena el formulario</h2>
             <CampoTexto 
                 title="Nombre" 
                 placeholder="Ingresar nombre" 
@@ -44,9 +46,11 @@ const FormularioAyuda = () => {
                 setValor={setProblema}
             />
             <Btn>
-                Enviar comentario
+                Enviar
             </Btn>
         </form>
     </section>
+    </> 
+    )
 }
 export default FormularioAyuda
